@@ -52,7 +52,24 @@ void mergesort(int* vetor,int inicio,int fim){
   
   
 void getnumbetween(int min,int max,int* n){//a simple function that reads an integer in between a maximun and a minimun limiter
-    scanf("%i",n);
+    int a;
+    char lixo[1001];
+
+    //this part of the code forces the input to be an integer
+    again://this label make it that you always have to check if the input is an integer
+    a = scanf("%i",n);
+    while(a != 1){      
+        //this lines will clear the input queue so that you can read the input again 
+        while(scanf("%1000s", lixo) != 1){
+            scanf("%s",&lixo);
+        }          
+    
+        //now you read the input again expecting an integer
+        printf("digite um numero de %i a %i\n",min,max);
+        a = scanf("%i",n);
+    }
+    
+    //and this part forces the input to be in the specified range
     while(*n < min || *n > max){
         if(*n < min){
             printf("digite um valor maior ou igual a %i:\n",min);//the number is too small
@@ -60,7 +77,7 @@ void getnumbetween(int min,int max,int* n){//a simple function that reads an int
         else{
             printf("digite um valor menor ou igual a %i:\n",max);//the number is too big
         }
-        scanf("%i",n);
+        goto again;//if the value is too big or too small you have to get another input and check again if it is an integer
     }
     return;
 }
