@@ -10,7 +10,7 @@ Como foi proposto, o programa irá ler a quantidade de jogos a ser gerados (um n
 
 O programa é simples de rodar, basta compilar normalmente com o gcc:
 
-Comando: `gcc -o nomedoexecutavel nomedoarquivo.c`
+Comando: `gcc -o nomedoexecutavel megasena.c`
 
 Após compilar, basta só rodar o executável criado.
 
